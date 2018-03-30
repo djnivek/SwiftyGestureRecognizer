@@ -30,7 +30,8 @@ override func viewDidAppear(_ animated: Bool) {
     GestureRecognizer.install(contactLabel).pressed { (label, recognizer) in // install the tap recognizer
         (label as! UILabel).textColor = .red
     }
-}```
+}
+```
 
 #### Uninstall
 
