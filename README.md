@@ -27,8 +27,8 @@ You will need to attach the gesture on the `UIView` you want by calling the clas
 ```swift
 override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    GestureRecognizer.install(contactLabel).pressed { (label, recognizer) in // install the tap recognizer
-        (label as! UILabel).textColor = .red
+    GestureRecognizer.install(contactLabel).pressed { (label, recognizer) in
+        label.textColor = .red
     }
 }
 ```
