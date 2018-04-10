@@ -1,6 +1,8 @@
 # SwiftyGestureRecognizer
 
-![Platforms](https://img.shields.io/badge/platforms-ios-lightgrey.svg) ![Swift version](https://img.shields.io/badge/language-swift-ff69b.svg) ![CocoaPods](https://img.shields.io/cocoapods/l/AFNetworking.svg)
+![Platforms](https://img.shields.io/badge/platforms-ios-lightgrey.svg)
+![Swift version](https://img.shields.io/badge/language-swift-ff69b.svg)
+![CocoaPods](https://img.shields.io/cocoapods/l/AFNetworking.svg)
 
 __This project is already available but needs a lot of functionalities__<br>
 

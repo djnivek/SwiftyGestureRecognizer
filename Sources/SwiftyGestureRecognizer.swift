@@ -16,7 +16,6 @@ class GestureRecognizerStore<P: UIView, T: UIGestureRecognizer> {
         return GestureRecognizerStore<P, T>()
     }
     
-    //static var shared =
     var recognizers: [P:GestureRecognizer<P, T>] = [:] as! [P : GestureRecognizer]
     func add(view: P, with recognizer: GestureRecognizer<P, T>) {
         self.recognizers[view] = recognizer
