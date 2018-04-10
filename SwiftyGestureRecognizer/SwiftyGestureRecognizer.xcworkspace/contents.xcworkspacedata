@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:SwiftyGesture-Example/SwiftyGesture-Example.xcodeproj">
+      location = "group:SwiftyGestureRecognizer-Example/SwiftyGesture-Example.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:SwiftyGestureRecognizer.xcodeproj">
+      location = "group:SwiftyGestureRecognizer/SwiftyGestureRecognizer.xcodeproj">
    </FileRef>
 </Workspace>
