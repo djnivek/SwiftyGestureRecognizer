@@ -10,34 +10,6 @@ import UIKit
 
 public typealias TapGestureRecognizerBlock<P: UIView, T: UIGestureRecognizer> = (_ attachedElement: P, _ recognizer: T) -> Void
 
-class GestureRecognizerStore<P: UIView, T: UIGestureRecognizer> {
-    
-    static func sharedGestureRecognizerStore<P: UIView, T: UIGestureRecognizer>() -> GestureRecognizerStore<P, T> {
-        return GestureRecognizerStore<P, T>()
-    }
-    
-    var recognizers: [P:GestureRecognizer<P, T>] = [:] as! [P : GestureRecognizer]
-    func add(view: P, with recognizer: GestureRecognizer<P, T>) {
-        self.recognizers[view] = recognizer
-    }
-    func getRecognizer(by view: P) -> GestureRecognizer<P, T>? {
-        return self.recognizers[view]
-    }
-    func remove(for view: P) {
-        self.recognizers.removeValue(forKey: view)
-    }
-    func removeAll() {
-        self.recognizers.removeAll()
-    }
-    func forEachRecognizer(forEach: (_ recognizer: GestureRecognizer<P, T>) -> Void) {
-        for key in recognizers.keys {
-            if let rec = recognizers[key] {
-                forEach(rec)
-            }
-        }
-    }
-}
-
 public class GestureRecognizer<P: UIView, T: UIGestureRecognizer> {
     
     var gestureRecognizer: UIGestureRecognizer?
@@ -45,13 +17,12 @@ public class GestureRecognizer<P: UIView, T: UIGestureRecognizer> {
     
     var excecutableBlock: TapGestureRecognizerBlock<P, T>?
     
-    //associatedtype view: T
-    //associatedtype recognizer: P
-    
     init(element: P) {
         self.element = element
         self.element.isUserInteractionEnabled = true
     }
+    
+    // MARK: - Setup
     
     public class func install(_ element: P) -> GestureRecognizer {
         let recognizer = GestureRecognizer(element: element)
