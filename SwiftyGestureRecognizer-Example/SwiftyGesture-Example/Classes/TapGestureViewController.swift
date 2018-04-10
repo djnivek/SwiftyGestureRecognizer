@@ -22,6 +22,7 @@ class TapGestureViewController: UIViewController {
         
         GestureRecognizer.install(label).pressed { (label, gesture) in
             label.textColor = label.textColor == .red ? .green : .red
+            label.text = "Tapped"
         }
     }
     

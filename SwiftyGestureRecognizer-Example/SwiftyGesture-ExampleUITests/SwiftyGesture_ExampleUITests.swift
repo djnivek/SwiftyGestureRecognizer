@@ -28,9 +28,15 @@ class SwiftyGesture_ExampleUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testTapHandled() {
+        
+        let app = XCUIApplication()
+        app.tables/*@START_MENU_TOKEN@*/.staticTexts["Tap"]/*[[".cells.staticTexts[\"Tap\"]",".staticTexts[\"Tap\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        let labelStaticText = app.staticTexts["Label"]
+        labelStaticText.tap()
+        
+        XCTAssert(labelStaticText.label == "Tapped")
     }
     
 }

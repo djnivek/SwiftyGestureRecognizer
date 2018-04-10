@@ -14,38 +14,29 @@
 		0EC4CB11207B91ED00B1BB2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EC4CB10207B91ED00B1BB2D /* Assets.xcassets */; };
 		0EC4CB14207B91ED00B1BB2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EC4CB12207B91ED00B1BB2D /* LaunchScreen.storyboard */; };
 		0EC4CB1F207B91ED00B1BB2D /* SwiftyGesture_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC4CB1E207B91ED00B1BB2D /* SwiftyGesture_ExampleUITests.swift */; };
-		0EC4CB45207B92CD00B1BB2D /* SwiftyGestureRecognizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EC4CB3E207B925700B1BB2D /* SwiftyGestureRecognizer.framework */; };
-		0EC4CB46207B92CD00B1BB2D /* SwiftyGestureRecognizer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0EC4CB3E207B925700B1BB2D /* SwiftyGestureRecognizer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0E4D5CF5207D068C0043F4C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0E4D5CF0207D068C0043F4C3 /* SwiftyGestureRecognizer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 52D6D97C1BEFF229002C0205;
+			remoteInfo = "SwiftyGestureRecognizer-iOS";
+		};
+		0E4D5CF7207D068C0043F4C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0E4D5CF0207D068C0043F4C3 /* SwiftyGestureRecognizer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 52D6D9861BEFF229002C0205;
+			remoteInfo = "SwiftyGestureRecognizer-iOS Tests";
+		};
 		0EC4CB1B207B91ED00B1BB2D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0EC4CAFE207B91ED00B1BB2D /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0EC4CB05207B91ED00B1BB2D;
 			remoteInfo = "SwiftyGesture-Example";
-		};
-		0EC4CB3D207B925700B1BB2D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0EC4CB38207B925700B1BB2D /* SwiftyGestureRecognizer.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 52D6D97C1BEFF229002C0205;
-			remoteInfo = "SwiftyGestureRecognizer-iOS";
-		};
-		0EC4CB3F207B925700B1BB2D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0EC4CB38207B925700B1BB2D /* SwiftyGestureRecognizer.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 52D6D9861BEFF229002C0205;
-			remoteInfo = "SwiftyGestureRecognizer-iOS Tests";
-		};
-		0EC4CB47207B92CD00B1BB2D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0EC4CB38207B925700B1BB2D /* SwiftyGestureRecognizer.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 52D6D97B1BEFF229002C0205;
-			remoteInfo = "SwiftyGestureRecognizer-iOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -56,7 +47,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0EC4CB46207B92CD00B1BB2D /* SwiftyGestureRecognizer.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,6 +54,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0E4D5CF0207D068C0043F4C3 /* SwiftyGestureRecognizer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyGestureRecognizer.xcodeproj; path = ../../SwiftyGestureRecognizer/SwiftyGestureRecognizer.xcodeproj; sourceTree = "<group>"; };
 		0EAB69C7207CB7F600AC3018 /* TapGestureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureViewController.swift; sourceTree = "<group>"; };
 		0EC4CB06207B91ED00B1BB2D /* SwiftyGesture-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftyGesture-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EC4CB09207B91ED00B1BB2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,7 +66,6 @@
 		0EC4CB1A207B91ED00B1BB2D /* SwiftyGesture-ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftyGesture-ExampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EC4CB1E207B91ED00B1BB2D /* SwiftyGesture_ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyGesture_ExampleUITests.swift; sourceTree = "<group>"; };
 		0EC4CB20207B91ED00B1BB2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0EC4CB38207B925700B1BB2D /* SwiftyGestureRecognizer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyGestureRecognizer.xcodeproj; path = ../../SwiftyGestureRecognizer.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +73,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EC4CB45207B92CD00B1BB2D /* SwiftyGestureRecognizer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +86,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E4D5CF1207D068C0043F4C3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0E4D5CF6207D068C0043F4C3 /* SwiftyGestureRecognizer.framework */,
+				0E4D5CF8207D068C0043F4C3 /* SwiftyGestureRecognizer-iOS Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		0EC4CAFD207B91ED00B1BB2D = {
 			isa = PBXGroup;
 			children = (
@@ -122,7 +120,7 @@
 				0EC4CB41207B927500B1BB2D /* Storyboards */,
 				0EC4CB44207B929900B1BB2D /* Ressources */,
 				0EC4CB43207B928D00B1BB2D /* SupportingFiles */,
-				0EC4CB38207B925700B1BB2D /* SwiftyGestureRecognizer.xcodeproj */,
+				0E4D5CF0207D068C0043F4C3 /* SwiftyGestureRecognizer.xcodeproj */,
 			);
 			path = "SwiftyGesture-Example";
 			sourceTree = "<group>";
@@ -134,15 +132,6 @@
 				0EC4CB20207B91ED00B1BB2D /* Info.plist */,
 			);
 			path = "SwiftyGesture-ExampleUITests";
-			sourceTree = "<group>";
-		};
-		0EC4CB39207B925700B1BB2D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0EC4CB3E207B925700B1BB2D /* SwiftyGestureRecognizer.framework */,
-				0EC4CB40207B925700B1BB2D /* SwiftyGestureRecognizer-iOS Tests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		0EC4CB41207B927500B1BB2D /* Storyboards */ = {
@@ -195,7 +184,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				0EC4CB48207B92CD00B1BB2D /* PBXTargetDependency */,
 			);
 			name = "SwiftyGesture-Example";
 			productName = "SwiftyGesture-Example";
@@ -254,8 +242,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 0EC4CB39207B925700B1BB2D /* Products */;
-					ProjectRef = 0EC4CB38207B925700B1BB2D /* SwiftyGestureRecognizer.xcodeproj */;
+					ProductGroup = 0E4D5CF1207D068C0043F4C3 /* Products */;
+					ProjectRef = 0E4D5CF0207D068C0043F4C3 /* SwiftyGestureRecognizer.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -267,18 +255,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		0EC4CB3E207B925700B1BB2D /* SwiftyGestureRecognizer.framework */ = {
+		0E4D5CF6207D068C0043F4C3 /* SwiftyGestureRecognizer.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = SwiftyGestureRecognizer.framework;
-			remoteRef = 0EC4CB3D207B925700B1BB2D /* PBXContainerItemProxy */;
+			remoteRef = 0E4D5CF5207D068C0043F4C3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		0EC4CB40207B925700B1BB2D /* SwiftyGestureRecognizer-iOS Tests.xctest */ = {
+		0E4D5CF8207D068C0043F4C3 /* SwiftyGestureRecognizer-iOS Tests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "SwiftyGestureRecognizer-iOS Tests.xctest";
-			remoteRef = 0EC4CB3F207B925700B1BB2D /* PBXContainerItemProxy */;
+			remoteRef = 0E4D5CF7207D068C0043F4C3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -329,11 +317,6 @@
 			isa = PBXTargetDependency;
 			target = 0EC4CB05207B91ED00B1BB2D /* SwiftyGesture-Example */;
 			targetProxy = 0EC4CB1B207B91ED00B1BB2D /* PBXContainerItemProxy */;
-		};
-		0EC4CB48207B92CD00B1BB2D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "SwiftyGestureRecognizer-iOS";
-			targetProxy = 0EC4CB47207B92CD00B1BB2D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
