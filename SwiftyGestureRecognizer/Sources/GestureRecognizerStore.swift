@@ -8,26 +8,25 @@
 
 import UIKit
 
-class GestureRecognizerStore<P: UIView, T: UIGestureRecognizer> {
+class GestureRecognizerStore {
     
-    static func sharedGestureRecognizerStore<P: UIView, T: UIGestureRecognizer>() -> GestureRecognizerStore<P, T> {
-        return GestureRecognizerStore<P, T>()
-    }
+    static var shared = GestureRecognizerStore()
     
-    var recognizers: [P:GestureRecognizer<P, T>] = [:] as! [P : GestureRecognizer]
-    func add(view: P, with recognizer: GestureRecognizer<P, T>) {
-        self.recognizers[view] = recognizer
+    var recognizers: [UIView:GestureRecognizer] = [:] as! [UIView : GestureRecognizer]
+    
+    func add<T>(view: T, with recognizer: GestureRecognizer<T, UIGestureRecognizer>) {
+        self.recognizers[view] = (recognizer as! GestureRecognizer<UIView, UIGestureRecognizer>)
     }
-    func getRecognizer(by view: P) -> GestureRecognizer<P, T>? {
+    func getRecognizer<T: UIView>(by view: T, t: T.Type = T.self) -> GestureRecognizer<UIView, UIGestureRecognizer>? {
         return self.recognizers[view]
     }
-    func remove(for view: P) {
+    func remove<T: UIView>(for view: T) {
         self.recognizers.removeValue(forKey: view)
     }
     func removeAll() {
         self.recognizers.removeAll()
     }
-    func forEachRecognizer(forEach: (_ recognizer: GestureRecognizer<P, T>) -> Void) {
+    func forEachRecognizer(forEach: (_ recognizer: GestureRecognizer<UIView, UIGestureRecognizer>) -> Void) {
         for key in recognizers.keys {
             if let rec = recognizers[key] {
                 forEach(rec)

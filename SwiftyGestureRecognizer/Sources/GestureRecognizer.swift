@@ -12,7 +12,7 @@ public typealias TapGestureRecognizerBlock<P: UIView, T: UIGestureRecognizer> = 
 
 public class GestureRecognizer<P: UIView, T: UIGestureRecognizer> {
     
-    var gestureRecognizer: UIGestureRecognizer?
+    public var gestureRecognizer: UIGestureRecognizer?
     var element: P
     
     var excecutableBlock: TapGestureRecognizerBlock<P, T>?
@@ -25,22 +25,30 @@ public class GestureRecognizer<P: UIView, T: UIGestureRecognizer> {
     // MARK: - Setup
     
     public class func install(_ element: P) -> GestureRecognizer {
+        print("Installing element \(element)")
         let recognizer = GestureRecognizer(element: element)
-        GestureRecognizerStore.sharedGestureRecognizerStore().add(view: element, with: recognizer)
+        GestureRecognizerStore.shared.add(view: element, with: recognizer as! GestureRecognizer<UIView, UIGestureRecognizer>)
         return recognizer
     }
     
     public class func uninstall(_ element: P) {
-        guard let recognizer = GestureRecognizerStore.sharedGestureRecognizerStore().getRecognizer(by: element) else { return }
+        print("Uninstalling element \(element)")
+        guard let recognizer = GestureRecognizerStore.shared.getRecognizer(by: element) else {
+            fatalError("No recognizer available for uninstalling")
+        }
         recognizer.removeGestureRecognizer()
-        GestureRecognizerStore.sharedGestureRecognizerStore().remove(for: recognizer.element)
+        GestureRecognizerStore.shared.remove(for: recognizer.element)
+    }
+    
+    public class func _debugGet(for element: P) -> GestureRecognizer<P, T> {
+        return GestureRecognizerStore.shared.getRecognizer(by: element) as! GestureRecognizer<P, T>
     }
     
     public class func uninstallAll() {
-        GestureRecognizerStore.sharedGestureRecognizerStore().forEachRecognizer {
+        GestureRecognizerStore.shared.forEachRecognizer {
             $0.removeGestureRecognizer()
         }
-        GestureRecognizerStore.sharedGestureRecognizerStore().removeAll()
+        GestureRecognizerStore.shared.removeAll()
     }
     
     // MARK: - LifeCycle

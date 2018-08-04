@@ -6,18 +6,21 @@
 //  Copyright © 2018 SwiftyGestureRecognizer. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import XCTest
 import SwiftyGestureRecognizer
 
 class SwiftyGestureRecognizerTests: XCTestCase {
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        //// XCTAssertEqual(SwiftyGestureRecognizer().text, "Hello, World!")
+    
+    func testAllocation() {
+        let label = UILabel()
+        GestureRecognizer.install(label).pressed { (_, _) in }
+        let gesture = GestureRecognizer._debugGet(for: label)
+        let tapGesture = gesture.gestureRecognizer
+        XCTAssertNotNil(tapGesture, "UIGestureRecognizer not instantiated")
     }
     
     static var allTests = [
-        ("testExample", testExample),
+        ("testAllocation", testAllocation),
     ]
 }
