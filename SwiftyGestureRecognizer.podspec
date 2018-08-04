@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
   s.name         = "SwiftyGestureRecognizer"
   s.version      = "0.1"
-  s.summary      = ""
+  s.summary      = "Modern Swift API for UIGestureRecognizer"
   s.description  = <<-DESC
-    Your description here.
+  SwiftyGestureRecognizer makes Gesture Recognizer API easy to use in the simplest way.
   DESC
   s.homepage     = "https://github.com/djnivek/SwiftyGestureRecognizer"
   s.license      = { :type => "MIT", :file => "LICENSE" }
@@ -12,5 +12,5 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "8.0"
   s.source       = { :git => "https://github.com/djnivek/SwiftyGestureRecognizer.git", :tag => s.version.to_s }
   s.source_files  = "SwiftyGestureRecognizer/Sources/**/*"
-  s.frameworks  = "Foundation"
+  s.frameworks  = "UIKit"
 end
