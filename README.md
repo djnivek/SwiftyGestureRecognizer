@@ -24,12 +24,12 @@ import SwiftyGestureRecognizer
 
 #### Install
 
-You will need to attach the gesture on the `UIView` you want by calling the class function `install(_:UIView)`
+You will need to attach the gesture on the `UIView` you want by calling the constructor `init(for: UIView)`
 
 ```swift
 override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    GestureRecognizer.install(contactLabel).pressed { (label, recognizer) in
+    GestureRecognizer(for: contactLabel).pressed { (label, recognizer) in
         label.textColor = .red
     }
 }

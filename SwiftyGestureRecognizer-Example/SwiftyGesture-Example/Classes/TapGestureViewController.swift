@@ -20,8 +20,10 @@ class TapGestureViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        GestureRecognizer.install(label).pressed { (label, gesture) in
+        label.isUserInteractionEnabled = true
+        GestureRecognizer(for: label).pressed { (label, gesture) in
             label.textColor = label.textColor == .red ? .green : .red
+            label.text = "Tapped"
         }
     }
     
