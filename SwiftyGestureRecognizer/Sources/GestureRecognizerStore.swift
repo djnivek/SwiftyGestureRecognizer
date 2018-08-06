@@ -12,12 +12,12 @@ class GestureRecognizerStore {
     
     static var shared = GestureRecognizerStore()
     
-    var recognizers: [UIView:GestureRecognizer] = [:] as! [UIView : GestureRecognizer]
+    var recognizers: [UIView : Any] = [:]
     
-    func add<T>(view: T, with recognizer: GestureRecognizer<T, UIGestureRecognizer>) {
-        self.recognizers[view] = (recognizer as! GestureRecognizer<UIView, UIGestureRecognizer>)
+    func add<T>(view: T, with recognizer: GestureRecognizer<T>) {
+        self.recognizers[view] = recognizer
     }
-    func getRecognizer<T: UIView>(by view: T, t: T.Type = T.self) -> GestureRecognizer<UIView, UIGestureRecognizer>? {
+    func getRecognizer<T: UIView>(by view: T, t: T.Type = T.self) -> Any? {
         return self.recognizers[view]
     }
     func remove<T: UIView>(for view: T) {
@@ -26,10 +26,10 @@ class GestureRecognizerStore {
     func removeAll() {
         self.recognizers.removeAll()
     }
-    func forEachRecognizer(forEach: (_ recognizer: GestureRecognizer<UIView, UIGestureRecognizer>) -> Void) {
+    func forEachRecognizer(forEach: (_ recognizer: GestureRecognizer<UIView>) -> Void) {
         for key in recognizers.keys {
             if let rec = recognizers[key] {
-                forEach(rec)
+                forEach(rec as! GestureRecognizer<UIView>)
             }
         }
     }

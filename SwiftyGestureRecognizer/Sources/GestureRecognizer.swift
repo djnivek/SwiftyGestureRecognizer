@@ -8,40 +8,40 @@
 
 import UIKit
 
-public typealias TapGestureRecognizerBlock<P: UIView, T: UIGestureRecognizer> = (_ attachedElement: P, _ recognizer: T) -> Void
+public typealias TapGestureRecognizerBlock<P: UIView> = (_ attachedElement: P, _ recognizer: UIGestureRecognizer) -> Void
 
-public class GestureRecognizer<P: UIView, T: UIGestureRecognizer> {
+
+
+public class GestureRecognizer<P: UIView> {
     
     public var gestureRecognizer: UIGestureRecognizer?
     var element: P
     
-    var excecutableBlock: TapGestureRecognizerBlock<P, T>?
+    var excecutableBlock: TapGestureRecognizerBlock<P>?
     
-    init(element: P) {
+    public init(for element: P) {
         self.element = element
         self.element.isUserInteractionEnabled = true
+        
+        GestureRecognizerStore.shared.add(view: element, with: self)
     }
     
     // MARK: - Setup
     
-    public class func install(_ element: P) -> GestureRecognizer {
-        print("Installing element \(element)")
-        let recognizer = GestureRecognizer(element: element)
-        GestureRecognizerStore.shared.add(view: element, with: recognizer as! GestureRecognizer<UIView, UIGestureRecognizer>)
-        return recognizer
-    }
+//    public class func install(_ element: P) -> GestureRecognizer {
+//        print("Installing element \(element)")
+//        let recognizer = GestureRecognizer(element: element)
+//        GestureRecognizerStore.shared.add(view: element, with: recognizer)
+//        return recognizer
+//    }
     
     public class func uninstall(_ element: P) {
         print("Uninstalling element \(element)")
-        guard let recognizer = GestureRecognizerStore.shared.getRecognizer(by: element) else {
+        guard let recognizer = GestureRecognizerStore.shared.getRecognizer(by: element) as? GestureRecognizer<UIView> else {
             fatalError("No recognizer available for uninstalling")
         }
         recognizer.removeGestureRecognizer()
         GestureRecognizerStore.shared.remove(for: recognizer.element)
-    }
-    
-    public class func _debugGet(for element: P) -> GestureRecognizer<P, T> {
-        return GestureRecognizerStore.shared.getRecognizer(by: element) as! GestureRecognizer<P, T>
     }
     
     public class func uninstallAll() {
@@ -72,7 +72,7 @@ public class GestureRecognizer<P: UIView, T: UIGestureRecognizer> {
         self.add(gestureRecognizer: self.gestureRecognizer!, to: self.element)
     }
     
-    public func pressed(_ excecutableBlock: @escaping TapGestureRecognizerBlock<P, T>) {
+    public func pressed(_ excecutableBlock: @escaping TapGestureRecognizerBlock<P>) {
         self.excecutableBlock = excecutableBlock
         self.pressedGestureInit()
     }
@@ -80,8 +80,8 @@ public class GestureRecognizer<P: UIView, T: UIGestureRecognizer> {
     // MARK: - Selector
     
     @objc func action(recognizer: UIGestureRecognizer) {
-        if let element = recognizer.view as? P, let rec = recognizer as? T {
-            self.excecutableBlock?(element, rec)
+        if let element = recognizer.view as? P {
+            self.excecutableBlock?(element, recognizer)
         }
     }
     
