@@ -29,7 +29,6 @@ class TapGestureViewController: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        
         GestureRecognizer.uninstall(label)
     }
 

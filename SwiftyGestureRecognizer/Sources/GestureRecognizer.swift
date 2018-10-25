@@ -28,16 +28,9 @@ public class GestureRecognizer<P: UIView> {
     
     // MARK: - Setup
     
-//    public class func install(_ element: P) -> GestureRecognizer {
-//        print("Installing element \(element)")
-//        let recognizer = GestureRecognizer(element: element)
-//        GestureRecognizerStore.shared.add(view: element, with: recognizer)
-//        return recognizer
-//    }
-    
     public class func uninstall(_ element: P) {
         print("Uninstalling element \(element)")
-        guard let recognizer = GestureRecognizerStore.shared.getRecognizer(by: element) as? GestureRecognizer<UIView> else {
+        guard let recognizer = GestureRecognizerStore.shared.getRecognizer(by: element) as? GestureRecognizer<P> else {
             fatalError("No recognizer available for uninstalling")
         }
         recognizer.removeGestureRecognizer()
