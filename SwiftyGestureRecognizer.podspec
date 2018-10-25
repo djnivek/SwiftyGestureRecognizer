@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
   s.name         = "SwiftyGestureRecognizer"
-  s.version      = "0.1"
-  s.summary      = ""
+  s.version      = "0.2.1"
+  s.summary      = "Modern Swift API for UIGestureRecognizer"
   s.description  = <<-DESC
-    Your description here.
+    SwiftyGestureRecognizer makes Gesture Recognizer API easy to use in the simplest way.
   DESC
   s.homepage     = "https://github.com/djnivek/SwiftyGestureRecognizer"
   s.license      = { :type => "MIT", :file => "LICENSE" }
