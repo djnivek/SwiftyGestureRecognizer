@@ -13,15 +13,9 @@ class TapGestureViewController: UIViewController {
 
     @IBOutlet weak var label: UILabel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        label.isUserInteractionEnabled = true
-        GestureRecognizer(for: label).pressed { (label, gesture) in
+        GestureRecognizer(for: label).pressed { (label, _) in
             label.textColor = label.textColor == .red ? .green : .red
             label.text = "Tapped"
         }
