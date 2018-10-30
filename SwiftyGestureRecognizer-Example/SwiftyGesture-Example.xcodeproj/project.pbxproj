@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E04BD2E218899DB007FA6F8 /* PanGestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E04BD2D218899DB007FA6F8 /* PanGestureViewController.swift */; };
+		0E04BD3221889CC7007FA6F8 /* PinchGestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E04BD3121889CC7007FA6F8 /* PinchGestureViewController.swift */; };
+		0E2A308621830C9A004F6BED /* RotationGestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2A308521830C9A004F6BED /* RotationGestureViewController.swift */; };
 		0E8CC32C211847DD00F83DCB /* SwiftyGestureRecognizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EB51AF621170E8E00D61419 /* SwiftyGestureRecognizer.framework */; };
 		0EAB69C8207CB7F600AC3018 /* TapGestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAB69C7207CB7F600AC3018 /* TapGestureViewController.swift */; };
 		0EC4CB0A207B91ED00B1BB2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC4CB09207B91ED00B1BB2D /* AppDelegate.swift */; };
@@ -55,6 +58,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0E04BD2D218899DB007FA6F8 /* PanGestureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanGestureViewController.swift; sourceTree = "<group>"; };
+		0E04BD3121889CC7007FA6F8 /* PinchGestureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchGestureViewController.swift; sourceTree = "<group>"; };
+		0E2A308521830C9A004F6BED /* RotationGestureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationGestureViewController.swift; sourceTree = "<group>"; };
 		0E4D5CF0207D068C0043F4C3 /* SwiftyGestureRecognizer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyGestureRecognizer.xcodeproj; path = ../SwiftyGestureRecognizer/SwiftyGestureRecognizer.xcodeproj; sourceTree = "<group>"; };
 		0EAB69C7207CB7F600AC3018 /* TapGestureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureViewController.swift; sourceTree = "<group>"; };
 		0EC4CB06207B91ED00B1BB2D /* SwiftyGesture-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftyGesture-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,7 +163,10 @@
 			isa = PBXGroup;
 			children = (
 				0EC4CB0B207B91ED00B1BB2D /* GesturesTableViewController.swift */,
+				0E2A308521830C9A004F6BED /* RotationGestureViewController.swift */,
 				0EAB69C7207CB7F600AC3018 /* TapGestureViewController.swift */,
+				0E04BD2D218899DB007FA6F8 /* PanGestureViewController.swift */,
+				0E04BD3121889CC7007FA6F8 /* PinchGestureViewController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -306,6 +315,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E2A308621830C9A004F6BED /* RotationGestureViewController.swift in Sources */,
+				0E04BD2E218899DB007FA6F8 /* PanGestureViewController.swift in Sources */,
+				0E04BD3221889CC7007FA6F8 /* PinchGestureViewController.swift in Sources */,
 				0EAB69C8207CB7F600AC3018 /* TapGestureViewController.swift in Sources */,
 				0EC4CB0C207B91ED00B1BB2D /* GesturesTableViewController.swift in Sources */,
 				0EC4CB0A207B91ED00B1BB2D /* AppDelegate.swift in Sources */,

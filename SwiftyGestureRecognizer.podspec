@@ -12,5 +12,5 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "8.0"
   s.source       = { :git => "https://github.com/djnivek/SwiftyGestureRecognizer.git", :tag => s.version.to_s }
   s.source_files  = "SwiftyGestureRecognizer/Sources/**/*"
-  s.frameworks  = "Foundation"
+  s.frameworks  = "UIKit"
 end

@@ -10,14 +10,14 @@ import UIKit
 
 struct Gesture {
     var title: String
-    var recognizerName: String
+    var segueName: String
 }
 
 struct Gestures {
-    static let pinch = Gesture(title: "Pinch", recognizerName: "UIPinchGestureRecognizer")
-    static let rotate = Gesture(title: "Rotate", recognizerName: "UIRotationGestureRecognizer")
-    static let drag = Gesture(title: "Drag", recognizerName: "UIPanGestureRecognizer")
-    static let tap = Gesture(title: "Tap", recognizerName: "UITapGestureRecognizer")
+    static let pinch = Gesture(title: "Pinch", segueName: "PinchSegue")
+    static let rotate = Gesture(title: "Rotate", segueName: "RotationSegue")
+    static let drag = Gesture(title: "Drag", segueName: "PanSegue")
+    static let tap = Gesture(title: "Tap", segueName: "TapSegue")
 }
 
 class GesturesTableViewController: UITableViewController {
@@ -33,8 +33,8 @@ class GesturesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // navigate to appropriated controller
-        let recognizerName = gestures[indexPath.row].recognizerName
-        self.performSegue(withIdentifier: recognizerName, sender: nil)
+        let segueName = gestures[indexPath.row].segueName
+        self.performSegue(withIdentifier: segueName, sender: nil)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
