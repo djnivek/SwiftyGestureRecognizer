@@ -30,6 +30,7 @@
                         <segue destination="9vw-x2-OVX" kind="show" identifier="RotationSegue" id="qdP-Tg-JdO"/>
                         <segue destination="rz4-Tu-gTh" kind="show" identifier="PanSegue" id="5N4-hn-KSP"/>
                         <segue destination="2wP-EP-l5W" kind="show" identifier="PinchSegue" id="nEM-4Q-4sH"/>
+                        <segue destination="sK1-zY-8to" kind="show" identifier="TapDragSegue" id="46X-X3-JlV"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Zs-Ab-oeQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -180,6 +181,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gpf-uY-S9P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3433" y="493"/>
+        </scene>
+        <!--Tap Drag View Controller-->
+        <scene sceneID="zW4-fi-yhl">
+            <objects>
+                <viewController id="sK1-zY-8to" customClass="TapDragViewController" customModule="SwiftyGesture_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kJz-Je-K0C">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nm3-gu-ZXe">
+                                <rect key="frame" x="67.5" y="269.5" width="240" height="128"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="DNa-QP-ZhT"/>
+                                    <constraint firstAttribute="width" constant="240" id="VGO-dT-MFD"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Nm3-gu-ZXe" firstAttribute="centerX" secondItem="kJz-Je-K0C" secondAttribute="centerX" id="8ec-M4-0Ti"/>
+                            <constraint firstItem="Nm3-gu-ZXe" firstAttribute="centerY" secondItem="kJz-Je-K0C" secondAttribute="centerY" id="nrY-wL-p0d"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sBp-xK-23r"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="Nm3-gu-ZXe" id="iy1-wa-qoa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gNs-p1-zhz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4206" y="493"/>
         </scene>
     </scenes>
 </document>

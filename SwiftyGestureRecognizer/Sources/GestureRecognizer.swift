@@ -23,7 +23,14 @@ public class GestureRecognizer<P: UIView> {
     var excecutableBlockPan: PanGestureRecognizerBlock<P>?
     var excecutableBlockPinch: PinchGestureRecognizerBlock<P>?
     
-    public init(for element: P) {
+    public class func get<P: UIView>(_ element: P) -> GestureRecognizer<P> {
+        guard let reco = GestureRecognizerStore.shared.getRecognizer(by: element) as? GestureRecognizer<P> else {
+            return GestureRecognizer<P>(for: element)
+        }
+        return reco
+    }
+    
+    init(for element: P) {
         self.element = element
         self.element.isUserInteractionEnabled = true
         
@@ -69,9 +76,15 @@ public class GestureRecognizer<P: UIView> {
         self.add(gestureRecognizer: self.gestureRecognizer!, to: self.element)
     }
     
-    public func pressed(_ excecutableBlock: @escaping TapGestureRecognizerBlock<P>) {
+    @discardableResult public func pressed(_ excecutableBlock: @escaping TapGestureRecognizerBlock<P>) -> Self {
         self.excecutableBlockTap = excecutableBlock
         self.pressedGestureInit()
+        return self
+    }
+    
+    @discardableResult public func pressable() -> Self {
+        self.pressedGestureInit()
+        return self
     }
     
     // MARK: RotationGesture
@@ -82,13 +95,15 @@ public class GestureRecognizer<P: UIView> {
         self.add(gestureRecognizer: self.gestureRecognizer!, to: self.element)
     }
     
-    public func rotatable() {
+    @discardableResult public func rotatable() -> Self {
         self.rotationGestureInit()
+        return self
     }
     
-    public func rotated(_ excecutableBlock: @escaping RotationGestureRecognizerBlock<P>) {
+    @discardableResult public func rotated(_ excecutableBlock: @escaping RotationGestureRecognizerBlock<P>) -> Self {
         self.excecutableBlockRotation = excecutableBlock
         self.rotationGestureInit()
+        return self
     }
     
     // MARK: - PanGesture
@@ -98,13 +113,15 @@ public class GestureRecognizer<P: UIView> {
         self.add(gestureRecognizer: self.gestureRecognizer!, to: self.element)
     }
     
-    public func pannable() {
+    @discardableResult public func pannable() -> Self {
         self.panGestureInit()
+        return self
     }
     
-    public func panned(_ excecutableBlock: @escaping PanGestureRecognizerBlock<P>) {
+    @discardableResult public func panned(_ excecutableBlock: @escaping PanGestureRecognizerBlock<P>) -> Self {
         self.excecutableBlockPan = excecutableBlock
         self.panGestureInit()
+        return self
     }
     
     // MARK: - PinchGesture
@@ -115,13 +132,15 @@ public class GestureRecognizer<P: UIView> {
         self.add(gestureRecognizer: self.gestureRecognizer!, to: self.element)
     }
     
-    public func pinchable() {
+    @discardableResult public func pinchable() -> Self {
         self.pinchGestureInit()
+        return self
     }
     
-    public func pinched(_ excecutableBlock: @escaping PinchGestureRecognizerBlock<P>) {
+    @discardableResult public func pinched(_ excecutableBlock: @escaping PinchGestureRecognizerBlock<P>) -> Self {
         self.excecutableBlockPinch = excecutableBlock
         self.pinchGestureInit()
+        return self
     }
     
     // MARK: - Selector

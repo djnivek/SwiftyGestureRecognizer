@@ -18,6 +18,7 @@ struct Gestures {
     static let rotate = Gesture(title: "Rotate", segueName: "RotationSegue")
     static let drag = Gesture(title: "Drag", segueName: "PanSegue")
     static let tap = Gesture(title: "Tap", segueName: "TapSegue")
+    static let tapDrag = Gesture(title: "Drag-Tap", segueName: "TapDragSegue")
 }
 
 class GesturesTableViewController: UITableViewController {
@@ -29,6 +30,7 @@ class GesturesTableViewController: UITableViewController {
         Gestures.rotate,
         Gestures.drag,
         Gestures.tap,
+        Gestures.tapDrag,
     ]
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

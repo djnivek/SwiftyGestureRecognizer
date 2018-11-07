@@ -15,9 +15,7 @@ class RotationGestureViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        GestureRecognizer(for: imageView).rotated { (imageView, gesture) in
-            print("rotation")
-        }
+        GestureRecognizer.get(imageView).rotatable()
     }
     
     override func viewDidDisappear(_ animated: Bool) {

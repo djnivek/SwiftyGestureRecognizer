@@ -1,23 +1,22 @@
 //
-//  PanGestureViewController.swift
+//  TapDragViewController.swift
 //  SwiftyGesture-Example
 //
-//  Created by Kévin MACHADO on 30/10/2018.
+//  Created by Kévin MACHADO on 07/11/2018.
 //  Copyright © 2018 Kévin MACHADO. All rights reserved.
 //
 
 import UIKit
 import SwiftyGestureRecognizer
 
-class PanGestureViewController: UIViewController {
+class TapDragViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        GestureRecognizer.get(imageView).panned { (imageView, gesture) in
-            print("panned")
+        GestureRecognizer.get(imageView).pannable().pressed { (imageView, _) in
+            self.imageView.backgroundColor = self.imageView.backgroundColor == .gray ? .red : .gray
         }
     }
     

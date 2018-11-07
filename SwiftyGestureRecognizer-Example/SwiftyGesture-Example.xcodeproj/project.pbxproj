@@ -18,6 +18,7 @@
 		0EC4CB11207B91ED00B1BB2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EC4CB10207B91ED00B1BB2D /* Assets.xcassets */; };
 		0EC4CB14207B91ED00B1BB2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EC4CB12207B91ED00B1BB2D /* LaunchScreen.storyboard */; };
 		0EC4CB1F207B91ED00B1BB2D /* SwiftyGesture_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC4CB1E207B91ED00B1BB2D /* SwiftyGesture_ExampleUITests.swift */; };
+		0EFDFC0121932ECA00471E13 /* TapDragViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFDFC0021932ECA00471E13 /* TapDragViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		0EC4CB1A207B91ED00B1BB2D /* SwiftyGesture-ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftyGesture-ExampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EC4CB1E207B91ED00B1BB2D /* SwiftyGesture_ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyGesture_ExampleUITests.swift; sourceTree = "<group>"; };
 		0EC4CB20207B91ED00B1BB2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0EFDFC0021932ECA00471E13 /* TapDragViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapDragViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				0EAB69C7207CB7F600AC3018 /* TapGestureViewController.swift */,
 				0E04BD2D218899DB007FA6F8 /* PanGestureViewController.swift */,
 				0E04BD3121889CC7007FA6F8 /* PinchGestureViewController.swift */,
+				0EFDFC0021932ECA00471E13 /* TapDragViewController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				0E04BD2E218899DB007FA6F8 /* PanGestureViewController.swift in Sources */,
 				0E04BD3221889CC7007FA6F8 /* PinchGestureViewController.swift in Sources */,
 				0EAB69C8207CB7F600AC3018 /* TapGestureViewController.swift in Sources */,
+				0EFDFC0121932ECA00471E13 /* TapDragViewController.swift in Sources */,
 				0EC4CB0C207B91ED00B1BB2D /* GesturesTableViewController.swift in Sources */,
 				0EC4CB0A207B91ED00B1BB2D /* AppDelegate.swift in Sources */,
 			);
