@@ -29,9 +29,19 @@ You will need to attach the gesture on the `UIView` you want by calling the cons
 ```swift
 override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    GestureRecognizer(for: contactLabel).pressed { (label, recognizer) in
+    GestureRecognizer.get(contactLabel).pressed { (label, recognizer) in
         label.textColor = .red
     }
+}
+```
+
+#### Chainable Gestures
+
+You can chain every gestures
+
+```swift
+GestureRecognizer.get(contactLabel).rotatable().pannable().pressed { (label, recognizer) in
+    label.textColor = .red
 }
 ```
 
@@ -54,10 +64,7 @@ SwiftyGestureRecognizer is made to ensure the complete UIGestureRecognizer API, 
 
 Expected work:
 
-- `UIPinchGestureRecognizer`
-- `UIRotationGestureRecognizer`
 - `UISwipeGestureRecognizer`
-- `UIPanGestureRecognizer`
 - `UIScreenEdgePanGestureRecognizer`
 - `UILongPressGestureRecognizer`
 
@@ -69,4 +76,4 @@ Expected work:
 
 # Licence
 
-SwiftyGestureRecognizer is available under the MIT license. See the LICENSE file for more info.
+_SwiftyGestureRecognizer is available under the MIT license. See the LICENSE file for more info._

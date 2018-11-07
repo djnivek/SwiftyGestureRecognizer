@@ -16,7 +16,7 @@ class PinchGestureViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        GestureRecognizer(for: imageView).pinched { (imageView, gesture) in
+        GestureRecognizer.get(imageView).pinched { (imageView, gesture) in
             print("panned")
         }
     }

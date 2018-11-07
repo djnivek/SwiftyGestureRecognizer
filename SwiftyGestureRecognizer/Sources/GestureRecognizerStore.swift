@@ -17,7 +17,7 @@ class GestureRecognizerStore {
     func add<T>(view: T, with recognizer: GestureRecognizer<T>) {
         self.recognizers[view] = recognizer
     }
-    func getRecognizer<T: UIView>(by view: T, t: T.Type = T.self) -> Any? {
+    func getRecognizer<T: UIView>(by view: T) -> Any? {
         return self.recognizers[view]
     }
     func remove<T: UIView>(for view: T) {
