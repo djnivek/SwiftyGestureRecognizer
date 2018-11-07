@@ -143,6 +143,56 @@ public class GestureRecognizer<P: UIView> {
         return self
     }
     
+    // MARK: RotationGesture
+    
+    private func rotationGestureInit() {
+        self.element.isMultipleTouchEnabled = true
+        self.gestureRecognizer = UIRotationGestureRecognizer(target: self, action: #selector(actionRotation(recognizer:)))
+        self.add(gestureRecognizer: self.gestureRecognizer!, to: self.element)
+    }
+    
+    public func rotatable() {
+        self.rotationGestureInit()
+    }
+    
+    public func rotated(_ excecutableBlock: @escaping RotationGestureRecognizerBlock<P>) {
+        self.excecutableBlockRotation = excecutableBlock
+        self.rotationGestureInit()
+    }
+    
+    // MARK: - PanGesture
+    
+    private func panGestureInit() {
+        self.gestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(actionPan(recognizer:)))
+        self.add(gestureRecognizer: self.gestureRecognizer!, to: self.element)
+    }
+    
+    public func pannable() {
+        self.panGestureInit()
+    }
+    
+    public func panned(_ excecutableBlock: @escaping PanGestureRecognizerBlock<P>) {
+        self.excecutableBlockPan = excecutableBlock
+        self.panGestureInit()
+    }
+    
+    // MARK: - PinchGesture
+    
+    private func pinchGestureInit() {
+        self.element.isMultipleTouchEnabled = true
+        self.gestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(actionPinch(recognizer:)))
+        self.add(gestureRecognizer: self.gestureRecognizer!, to: self.element)
+    }
+    
+    public func pinchable() {
+        self.pinchGestureInit()
+    }
+    
+    public func pinched(_ excecutableBlock: @escaping PinchGestureRecognizerBlock<P>) {
+        self.excecutableBlockPinch = excecutableBlock
+        self.pinchGestureInit()
+    }
+    
     // MARK: - Selector
     
     @objc func actionTap(recognizer: UITapGestureRecognizer) {
